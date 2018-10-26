@@ -1,5 +1,11 @@
 {
   "name": "event-san",
   "integrations": {},
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/connpass/api",
+      "proxyUrl": "https://connpass.com/api/v1/event"
+    }
+  ]
 }

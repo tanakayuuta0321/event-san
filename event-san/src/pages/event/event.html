@@ -1,4 +1,6 @@
 <ion-tabs>
-    <ion-tab [root]="searchRoot" tabTitle="Search" tabIcon="information-circle"></ion-tab>
-    <ion-tab [root]="bookmarkRoot" tabTitle="Bookmark" tabIcon="information-circle"></ion-tab>
+    <!-- フッターのアイコン名を編集 -->
+    <!-- tabTitleを日本語にしたことでURLがわかりにくくなるので、tabUrlPathで明示的に指定を追加 -->
+    <ion-tab [root]="searchRoot" tabTitle="検索" tabIcon="information-circle" tabUrlPath="search-root"></ion-tab>
+    <ion-tab [root]="bookmarkRoot" tabTitle="ブックマーク" tabIcon="information-circle" tabUrlPath="bookmark-root"></ion-tab>
 </ion-tabs>

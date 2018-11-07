@@ -10,6 +10,7 @@ import { EventProvider } from '../providers/event/event';
 
 // イベントプロパイダーはHTTP通信するため、HttpClientModuleのインポートが必要
 import { HttpClientModule } from '@angular/common/http';
+import { BookmarkProvider } from '../providers/bookmark/bookmark';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    EventProvider
+    EventProvider,
+    BookmarkProvider
   ]
 })
 export class AppModule {}

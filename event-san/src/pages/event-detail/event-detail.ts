@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { EventProvider } from '../../providers/event/event';
+import { BookmarkProvider } from '../../providers/bookmark/bookmark';
 
 
 /**
@@ -10,8 +11,8 @@ import { EventProvider } from '../../providers/event/event';
  * Ionic pages and navigation.
  */
 
- @IonicPage({
-   segment: 'event-detail/:eventId'
+@IonicPage({
+  segment: 'event-detail/:eventId'
  })
 @Component({
   selector: 'page-event-detail',
@@ -25,6 +26,8 @@ export class EventDetailPage {
       public navCtrl: NavController,
       public navParams: NavParams,
       public eventProvider: EventProvider,
+      public toastCtrl: ToastController,
+      public bookmarkProvider: BookmarkProvider
     ) {
     }
 
@@ -36,6 +39,17 @@ export class EventDetailPage {
         if (body && body.events && body.events.length > 0) this.event = body.events[0];
       });
     }
+  }
+
+  // ブックマークボタンが押されると、イベントをWeb Storageに保存すると共に、トーストメッセージを表示します。
+  doBookmark() {
+    this.bookmarkProvider.put(this.event).then(() => {
+      const toast = this.toastCtrl.create({
+        message: 'イベントをブックマークしました。',
+        duration: 1500
+      });
+      toast.present();
+    })
   }
 
 }

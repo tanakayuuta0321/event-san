@@ -19,7 +19,8 @@
 
   <ion-list class="event-list">
     <ng-container *ngFor="let event of events">
-      <button ion-item>
+      <!-- イベント検索画面のリストをクリック時に、openEventメソッド経由でイベント詳細画面を呼び出す処理 -->
+      <button ion-item (click)="openEvent(event)">
         <h2>{{event.title}}</h2>
         <h3>{{event.catch}}</h3>
         <h4>開催場所:</h4>

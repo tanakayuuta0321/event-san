@@ -54,6 +54,7 @@ export class SearchPage {
   // イベント検索画面のリストをクリック時に、openEventメソッド経由でイベント詳細画面を呼び出す処理
   openEvent(event) {
     this.navCtrl.push('EventDetailPage', {
+      eventId: event.event_id,
       event: event
     });
   }

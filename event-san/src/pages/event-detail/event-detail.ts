@@ -41,7 +41,6 @@ export class EventDetailPage {
     }
   }
 
-  // ブックマークボタンが押されると、イベントをWeb Storageに保存すると共に、トーストメッセージを表示します。
   doBookmark() {
     this.bookmarkProvider.put(this.event).then(() => {
       const toast = this.toastCtrl.create({

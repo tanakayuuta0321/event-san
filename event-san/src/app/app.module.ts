@@ -21,9 +21,8 @@ import { BookmarkProvider } from '../providers/bookmark/bookmark';
   ],
   imports: [
     BrowserModule,
-    // イベントプロパイダーはHTTP通信するため、HttpClientModuleのインポートが必要
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],
